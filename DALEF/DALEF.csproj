@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{624CF18A-CE31-4541-AED2-E552DA357AC9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DALEF</RootNamespace>
+    <AssemblyName>DALEF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db_Medecins.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Medecins.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_Medecins.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_Medecins.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Medecins.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db_Patients.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Patients.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_Patients.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_Patients.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_Patients.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFAdmin.cs" />
+    <Compile Include="EFMedecins.cs" />
+    <Compile Include="EFPatients.cs" />
+    <Compile Include="GetPatientByInfos_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectAllDispo_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAllLocaux_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAllMaisonMed_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAllMedecins_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAllPatients_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAllPresencesByMed_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAllSpecialites_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectMedByID_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectMMSByMedID_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPlanningByDate_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPresencesByMed_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectRDVaConfirmer_Result.cs">
+      <DependentUpon>db_Medecins.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectRDVByIdentifiant_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectRDVByPatientID_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectRDVforLocaux_Result.cs">
+      <DependentUpon>db_Patients.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomError\CustomError.csproj">
+      <Project>{c35c84a3-80d0-433f-a312-d72d53e4cb77}</Project>
+      <Name>CustomError</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modeles\Modeles.csproj">
+      <Project>{8f8eeac0-ad90-47f7-87e7-2f62399446a4}</Project>
+      <Name>Modeles</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="db.edmx.diagram">
+      <DependentUpon>db.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="db_Patients.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db_Patients.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="db_Medecins.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db_Medecins.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="db_Medecins.edmx.diagram">
+      <DependentUpon>db_Medecins.edmx</DependentUpon>
+    </None>
+    <None Include="db_Patients.edmx.diagram">
+      <DependentUpon>db_Patients.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.cs</LastGenOutput>
+    </Content>
+    <Content Include="db_Medecins.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_Medecins.edmx</DependentUpon>
+      <LastGenOutput>db_Medecins.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db_Medecins.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_Medecins.edmx</DependentUpon>
+      <LastGenOutput>db_Medecins.cs</LastGenOutput>
+    </Content>
+    <Content Include="db_Patients.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_Patients.edmx</DependentUpon>
+      <LastGenOutput>db_Patients.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db_Patients.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_Patients.edmx</DependentUpon>
+      <LastGenOutput>db_Patients.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

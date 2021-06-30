@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD2AD86D-4468-460F-99B3-DAECEAD51B18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DesignWinMedecins</RootNamespace>
+    <AssemblyName>DesignWinMedecins</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccueilMedecin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccueilMedecin.Designer.cs">
+      <DependentUpon>AccueilMedecin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssociationMedConsult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AssociationMedConsult.Designer.cs">
+      <DependentUpon>AssociationMedConsult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangerLienAssociation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangerLienAssociation.Designer.cs">
+      <DependentUpon>ChangerLienAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmerRDV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfirmerRDV.Designer.cs">
+      <DependentUpon>ConfirmerRDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EncodagePresence.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EncodagePresence.Designer.cs">
+      <DependentUpon>EncodagePresence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMedecins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMedecins.Designer.cs">
+      <DependentUpon>LoginMedecins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuMedecin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuMedecin.Designer.cs">
+      <DependentUpon>MenuMedecin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelesWin\modwinLienActif.cs" />
+    <Compile Include="ModelesWin\modwinPlanningMed.cs" />
+    <Compile Include="ModelesWin\modwinMMS.cs" />
+    <Compile Include="ModelesWin\modwinPresencesMed.cs" />
+    <Compile Include="ModelesWin\modwinMaisonsMed.cs" />
+    <Compile Include="ModelesWin\modwinMedecins.cs" />
+    <Compile Include="ModelesWin\modwinPatient.cs" />
+    <Compile Include="ModelesWin\modwinSpecialites.cs" />
+    <Compile Include="Planning.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Planning.Designer.cs">
+      <DependentUpon>Planning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableauPrincipalMedecin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableauPrincipalMedecin.Designer.cs">
+      <DependentUpon>TableauPrincipalMedecin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ShowUserControl.cs" />
+    <Compile Include="Variables\VariablesGlobales.cs" />
+    <EmbeddedResource Include="AccueilMedecin.resx">
+      <DependentUpon>AccueilMedecin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssociationMedConsult.resx">
+      <DependentUpon>AssociationMedConsult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangerLienAssociation.resx">
+      <DependentUpon>ChangerLienAssociation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmerRDV.resx">
+      <DependentUpon>ConfirmerRDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EncodagePresence.resx">
+      <DependentUpon>EncodagePresence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginMedecins.resx">
+      <DependentUpon>LoginMedecins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuMedecin.resx">
+      <DependentUpon>MenuMedecin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planning.resx">
+      <DependentUpon>Planning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TableauPrincipalMedecin.resx">
+      <DependentUpon>TableauPrincipalMedecin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomError\CustomError.csproj">
+      <Project>{c35c84a3-80d0-433f-a312-d72d53e4cb77}</Project>
+      <Name>CustomError</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\choixDocteur.png" />
+    <Content Include="img\maisonMedicale.png" />
+    <Content Include="img\rendezVous.png" />
+    <Content Include="img\validation.jpg" />
+    <Content Include="img\validation.png" />
+    <None Include="Resources\choixDocteur.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
